@@ -6,17 +6,19 @@ import envkey
 dotenv_path = Path('.env')
 load_dotenv(find_dotenv(raise_error_if_not_found=False))
 
-# Tokens do Facebook
-ACCESS_TOKEN = getenv('ACCESS_TOKEN')
-AD_ACCOUNT_ID = getenv('AD_ACCOUNT_ID')
-APP_SECRET = getenv('APP_SECRET')
-APP_ID = getenv('APP_ID')
-
 # Acesso para Postgres
 DBNAME = getenv("DBNAME")
 USER = getenv("USER")
 PASSWORD = getenv("PASSWORD")
 HOST = getenv("HOST")
+USER_WEBHOOK = getenv('USER_WEBHOOK')
+PASSWORD_WEBHOOK = getenv('PASSWORD_WEBHOOK')
+
+# Tokens do Facebook
+ACCESS_TOKEN = getenv('ACCESS_TOKEN')
+AD_ACCOUNT_ID = getenv('AD_ACCOUNT_ID')
+APP_SECRET = getenv('APP_SECRET')
+APP_ID = getenv('APP_ID')
 
 # Token do Google
 CLIENT_CUSTOMER_ID = getenv('CLIENT_CUSTOMER_ID')
