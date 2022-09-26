@@ -1,0 +1,7 @@
+python-dotenv==0.19.2
+psycopg2==2.9.3
+pandas
+datetime
+facebook-business==12.0.1
+google-ads==14.1.0
+envkey==1.*
