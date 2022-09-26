@@ -3,7 +3,6 @@ from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from healthcheck import HealthCheck
 from typing import Any, Dict
 from starlette.responses import Response
-from typing import Any, Dict
 from .core import db
 from .core.config import USER_WEBHOOK, PASSWORD_WEBHOOK
 from .crud.save_data import SaveData
