@@ -7,14 +7,14 @@ class GetData:
 
     @classmethod
     def fb_connect(self):
-        '''Conectar com a API do facebook'''
+        '''Connect to Facebook Ads API'''
         FacebookAdsApi.init(app_id=APP_ID, app_secret=APP_SECRET, access_token=ACCESS_TOKEN)
         my_account = AdAccount(AD_ACCOUNT_ID)
         return my_account
 
     @classmethod
     def gg_connect(self):
-        '''Conectar com a API do google'''
+        ''''Connect to Google Ads API'''
         credentials = {
             "developer_token": DEVELOPER_TOKEN,
             "refresh_token": REFRESH_TOKEN,
@@ -27,7 +27,10 @@ class GetData:
         return ga_service
     
     def fb_get_data(self):
+        '''Get data from Facebook Ads'''
         my_account = self.fb_connect()
+        
+        # Fields I want to receive
         fields = [
             'id',
             'name',
@@ -36,16 +39,16 @@ class GetData:
             'data_source',
             'account_id'
         ]
-        params = {
-        }
-        audiences = list(my_account.get_custom_audiences(fields=fields, params=params))
+        
+        audiences = list(my_account.get_custom_audiences(fields=fields))
 
-        audiences_filt = list(filter(lambda c: c['subtype'] != 'LOOKALIKE', audiences))
-
-        return audiences_filt
+        return audiences
 
     def gg_get_data(self):
+        '''Get data from Google Ads'''
         ga_service = self.gg_connect()
+        
+        # Fields I want to receive
         query = """
             SELECT
                 user_list.id,
