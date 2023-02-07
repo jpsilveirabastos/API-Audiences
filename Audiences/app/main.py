@@ -11,6 +11,7 @@ security = HTTPBasic()
 health = HealthCheck()
 app = FastAPI()
 
+# Route to receive data from Facebook Ads API
 @app.post("/fb_audience/")
 def test(request: Dict[Any,Any], credentials: HTTPBasicCredentials = Depends(security)):
     
@@ -25,6 +26,7 @@ def test(request: Dict[Any,Any], credentials: HTTPBasicCredentials = Depends(sec
 
     return request
 
+# Route to receive data from Google Ads API
 @app.post("/gg_audience/")
 def test(request: Dict[Any,Any], credentials: HTTPBasicCredentials = Depends(security)):
     
@@ -39,6 +41,7 @@ def test(request: Dict[Any,Any], credentials: HTTPBasicCredentials = Depends(sec
 
     return request
 
+# Route to check if the API is responding
 @app.get("/health-check/", include_in_schema=False)
 def healthcheck():
     message, status_code, headers = health.run()
