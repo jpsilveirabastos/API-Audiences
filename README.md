@@ -1,2 +1,2 @@
 # API-Audiences
-API para resgatar dados de públicos-alvo do Google Ads e Facebook Ads e salvarem no banco de dados relacional (PostgreSQL)
+API was made to retrieve audience data from Google Ads and Facebook Ads and save it in the relational database (PostgreSQL)
