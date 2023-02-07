@@ -3,10 +3,11 @@ from os import getenv
 from pathlib import Path
 import envkey
 
+# Uploading credentials from .env
 dotenv_path = Path('.env')
 load_dotenv(find_dotenv(raise_error_if_not_found=False))
 
-# Acesso para Postgres
+# Access to Postgres
 DBNAME = getenv("DBNAME")
 USER = getenv("USER")
 PASSWORD = getenv("PASSWORD")
@@ -14,13 +15,13 @@ HOST = getenv("HOST")
 USER_WEBHOOK = getenv('USER_WEBHOOK')
 PASSWORD_WEBHOOK = getenv('PASSWORD_WEBHOOK')
 
-# Tokens do Facebook
+# Access to Facebook
 ACCESS_TOKEN = getenv('ACCESS_TOKEN')
 AD_ACCOUNT_ID = getenv('AD_ACCOUNT_ID')
 APP_SECRET = getenv('APP_SECRET')
 APP_ID = getenv('APP_ID')
 
-# Token do Google
+# Access to Google
 CLIENT_CUSTOMER_ID = getenv('CLIENT_CUSTOMER_ID')
 DEVELOPER_TOKEN = getenv('DEVELOPER_TOKEN')
 REFRESH_TOKEN = getenv('REFRESH_TOKEN')
